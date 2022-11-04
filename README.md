@@ -1,8 +1,5 @@
-# APIGateway
-API Gateway to catch exception in middleware 
+# Middleway - Catching Exceptions
 
-<ul>
-  <li>apples</li>
-  <li>oranges</li>
-  <li>pears</li>
-</ul>
+This example was create using .Net 6, it's an example about techiniques to catch exceptions in API's. 
+
+Created by Cristian Martínez
