@@ -10,6 +10,7 @@ This example was create using .Net 6, it's an example about techiniques to catch
   <li>dotnet add package Microsoft.EntityFrameworkCore</li> Include EntityFrameworkCore package in project
   <li>dotnet add package Microsoft.EntityFrameworkCore.Design</li> Include EntityFrameworkCoreDesign package in project
   <li>dotnet add package Npgsql.EntityFrameworkCore.PostgreSQL</li> Include Npgsql.EntityFrameworkCore.PostgreSQL package 
+  <li>dotnet add package Microsoft.EntityFrameworkCore.SqlServer</li> Include Microsoft.EntityFrameworkCore.SqlServer package 
   <li>dotnet add package Microsoft.EntityFrameworkCore.Tools</li> Include Microsoft.EntityFrameworkCore.Tools package 
   <li>dotnet ef migrations add InitialMigrations</li> Allow data base migration using EF 
 
