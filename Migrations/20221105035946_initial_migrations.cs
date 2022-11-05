@@ -4,7 +4,7 @@
 
 namespace GlobalErrorApi.Migrations
 {
-    public partial class InitialMigrations : Migration
+    public partial class initial_migrations : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

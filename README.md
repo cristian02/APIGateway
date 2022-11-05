@@ -12,7 +12,8 @@ This example was create using .Net 6, it's an example about techiniques to catch
   <li>dotnet add package Npgsql.EntityFrameworkCore.PostgreSQL</li> Include Npgsql.EntityFrameworkCore.PostgreSQL package 
   <li>dotnet add package Microsoft.EntityFrameworkCore.SqlServer</li> Include Microsoft.EntityFrameworkCore.SqlServer package 
   <li>dotnet add package Microsoft.EntityFrameworkCore.Tools</li> Include Microsoft.EntityFrameworkCore.Tools package 
-  <li>dotnet ef migrations add InitialMigrations</li> Allow data base migration using EF 
+  <li>dotnet ef migrations add "initial_migrations"</li> Allow data base migration using EF 
+  <li>dotnet ef database update</li> Create schema and tables in db 
 
 </ol>
 
