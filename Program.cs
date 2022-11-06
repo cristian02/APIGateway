@@ -1,4 +1,6 @@
+using GlobalErrorApi.Configurations;
 using GlobalErrorApi.Data;
+using GlobalErrorApi.Services;
 using Microsoft.EntityFrameworkCore; 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +11,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.AddDbContext<AppDbContext>(opt=>opt.UseSqlServer(builder.Configuration.GetConnectionString("SampleDbConnection")));
+builder.Services.AddScoped<IDriverService, DriverService>(); 
+builder.Services.AddSwaggerGen(); 
 
 //builder.Services.AddEntityFrameworkNpgsql().AddDbContext<AppDbContext>(opt=>opt.UseNpgsql(builder.Configuration.GetConnectionString("SampleDbConnection")));
 
@@ -26,5 +30,7 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.AddGlobalErrorHandler(); 
 
 app.Run();
