@@ -1,3 +1,5 @@
+using System.Diagnostics;
+using System.Net;
 using GlobalErrorApi.Models;
 using GlobalErrorApi.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -37,7 +39,11 @@ public class DriversController : ControllerBase
     {
         var driver = await _driverService.GetDriverById(id); 
         if (driver == null)
-            throw new NotFoundException("This element didn't found"); 
+            throw new CustomerException()
+            {
+                customerMessage = "This element didn't found", 
+                statusCode = HttpStatusCode.Unauthorized
+            };
         return Ok(driver);
     }
 }
