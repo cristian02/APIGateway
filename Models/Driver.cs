@@ -6,4 +6,6 @@ public class Driver
     public String Name {get; set;} = string.Empty; 
 
     public int DriverNumber {get;set;}
+
+    public bool Enabled {get;set;}
 }

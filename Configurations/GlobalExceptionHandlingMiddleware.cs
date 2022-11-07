@@ -21,38 +21,13 @@ public class GlobalExceptionHandlignMiddleware
     public static Task HandleExceptionAsync(HttpContext context, Exception ex)
     {
         HttpStatusCode status; 
-        var stackTrace = string.Empty; 
+        var stackTrace = ex.StackTrace; 
         string message = ""; 
         var exceptionType = ex.GetType(); 
-        if(exceptionType == typeof(BadRequestException))
-        {
-            message = ex.Message; 
-            status = HttpStatusCode.BadRequest;
-            stackTrace = ex.StackTrace; 
-        }
-        else if (exceptionType  == typeof(NotFoundException))
-        {
-            message = ex.Message; 
-            status = HttpStatusCode.NotFound;
-            stackTrace = ex.StackTrace; 
-        }
-        else if (exceptionType  == typeof(GlobalErrorApi.Exceptions.KeyNotFoundException))
-        {
-            message = ex.Message; 
-            status = HttpStatusCode.NotImplemented;
-            stackTrace = ex.StackTrace; 
-        }
-        else if (exceptionType  == typeof(GlobalErrorApi.Exceptions.NotImplementedException))
-        {
-            message = ex.Message; 
-            status = HttpStatusCode.NotImplemented;
-            stackTrace = ex.StackTrace; 
-        }
-        else if (exceptionType  == typeof(UnauhorizedAccessException))
-        {
-            message = ex.Message; 
-            status = HttpStatusCode.Unauthorized;
-            stackTrace = ex.StackTrace; 
+        if (exceptionType == typeof(CustomerException)){
+            message = ((CustomerException)ex).customerMessage;
+            status =  ((CustomerException)ex).statusCode; 
+            stackTrace =  ex.StackTrace; 
         }
         else{
              message = ex.Message; 
